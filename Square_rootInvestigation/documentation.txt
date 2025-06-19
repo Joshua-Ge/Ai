@@ -1,0 +1,30 @@
+Predicting Square Roots with Machine Learning
+This project is an experiment to see how well a machine learning model can learn to predict the square root of a number. Instead of using a formula like math.sqrt(x), 
+I trained models to approximate the square root based only on example data.
+
+What I Did
+I trained four separate random forest regression models using datasets of different sizes:
+
+100 data points
+1,000 data points
+10,000 data points
+100,000 data points
+
+Each dataset was made of simple pairs like (x, sqrt(x)), and I used them to train the models to guess the square root of values.
+
+What I Found
+As expected, models trained on more data generally had better overall accuracy. 
+This was shown in their MSE (Mean Squared Error) and R² (a measure of how well the model fits the data). 
+But when I tested how each model performed on specific inputs like 3, 10, or 100,000, the results were surprising.
+
+For example:
+
+The biggest model (100,000 points) predicted large values like the square root of 100,000 very accurately
+
+But it got worse at small values like 3 and 10, even though the overall accuracy was higher
+
+This showed that even though the model was "better" on average, it didn’t always perform better at every point, especially where the training data was sparse.
+
+Why This Matters
+It highlights a key point in machine learning: having more data doesn't always mean better results unless that data is well distributed. 
+If most of your training examples are from large numbers, the model will struggle with small ones and vice versa.
